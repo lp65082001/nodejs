@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <button> Click Me to Get Image </button>
+        <script>
+            let button = document.querySelector("button");
+            button.onclick = () => {
+                let img = document.createElement("img");
+                let img_url = "https://i.imgur.com/V0pBTPS.png";
+                img.setAttribute("src", img_url);
+                document.body.appendChild(img);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <input type="text" id="fname" name="fname"><br>
+        <script>
+            let input = document.querySelector("input");
+            input.value = "const";
+            input.onchange = () => {
+                alert("Don't change the input!");
+                input.value = "const";  
+            };
+        </script>
+    </body>
+</html>

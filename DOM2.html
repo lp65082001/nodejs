@@ -1,0 +1,17 @@
+<body>
+    <div>
+        
+    </div>
+    <script>
+        let btn = document.createElement("button");   // Create <button> 元素
+        btn.innerHTML = "Click Me";   // 將 button 中放入字
+        //let body = document.querySelector("body");
+        let div = document.querySelector("div");
+        //body.appendChild(btn); // 新增 btn 到 DOM 結構中，變成 body 的 child element
+        div.appendChild(btn);
+
+        let h1_add = document.createElement("h1");
+        h1_add.innerHTML = "我是新增的 h1!";
+        div.appendChild(h1_add); // 在 div 中新增 h1 元素
+    </script>
+</body>
