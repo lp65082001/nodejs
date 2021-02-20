@@ -2,4 +2,4 @@
 
 // 引入模組，也就會拿到模組中 export 的東西。
 let want = require('./modulus1.js'); 
-console.log(want);
+console.log(want(2));
