@@ -44,12 +44,45 @@
 
     <script>
         //加then是要等待全部下載完
-        const db = firebase.firestore();
-        db.collection('ClassA').get().then((snapshot) => {  
-                snapshot.docs.forEach(doc => {
-                console.log(doc.data());  //forEach 每個都跑過
-            }) 
+        const db = firebase.firestore(); // 引入函式 (要仙家金要)
+
+        //取出資料get()
+        // db.collection('ClassA').get().then((snapshot) => {  //get 可以從資料庫取出資料  1. get()後是promise 才能用then => pending
+        //         snapshot.docs.forEach(doc => {  //doc 可以把promise的東西看得懂
+        //         console.log(doc.data());  //forEach 每個都跑過
+        //     }) 
+        // });
+
+        //加入資料 add()
+        ////method1
+        // let object1 = {
+        //     name: "Fiona",
+        //     age:20,
+        //     gender:"female"
+
+        // }
+        //  db.collection("ClassA").add(object1); //可以加資料但是doc是亂碼
+        ////method2
+        // db.collection("ClassA").doc("student4").set({  //用set 可以先拿出要另名的doc名子在上傳 1. 如果沒有就新增 如果已存在就取代
+        //         name: "Luffy",
+        //         age: 23,
+        //         gender: "male"
+        // });
+
+
+        //刪除資料delete
+        db.collection("ClassA").get().then(data =>{
+
+        //     data.docs.forEach(doc => {
+        //         console.log("id = ",doc.id)
+        //     });
+            //console.log(data.docs[0].id); //其實資料就是物件 陣列  
+            db.collection("ClassA").doc(data.docs[0].id).delete(); //delete要放在裡面
         });
+        
+
+
+        
     </script>
 
 </html>
