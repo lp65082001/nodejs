@@ -19,7 +19,7 @@ function renderStudents(doc){
     cross.textContent = 'x';
     tr.appendChild(cross);
     cross.addEventListener('click', (test) => {
-        test.stopPropagation();
+        test.stopPropagation(); //取消重新整理葉面
         let id = test.target.parentElement.getAttribute('data-id');
         console.log(id);
         db.collection('ClassA').doc(id).delete();
